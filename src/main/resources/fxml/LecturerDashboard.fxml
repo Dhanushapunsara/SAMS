@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.sams.controller.LecturerDashboardController"
+      prefWidth="1000" prefHeight="680"
+      spacing="0">
+
+    <!-- TOP BAR -->
+    <HBox styleClass="topbar" alignment="CENTER_LEFT" spacing="12">
+        <padding><Insets top="12" right="24" bottom="12" left="24"/></padding>
+        <Label text="SAMS" styleClass="topbar-logo"/>
+        <Label text="Lecturer Portal" styleClass="topbar-subtitle"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="userLabel" styleClass="topbar-user"/>
+        <Button text="Logout" onAction="#handleLogout" styleClass="btn-outline-sm"/>
+    </HBox>
+
+    <!-- NAV TAB BAR -->
+    <HBox styleClass="nav-bar" alignment="CENTER_LEFT" spacing="0">
+        <padding><Insets top="0" right="16" bottom="0" left="16"/></padding>
+        <Button text="Dashboard"  onAction="#showDashboard"  styleClass="nav-btn" maxHeight="Infinity"/>
+        <Button text="My Classes" onAction="#showMyClasses"  styleClass="nav-btn" maxHeight="Infinity"/>
+        <Button text="Attendance" onAction="#showAttendance" styleClass="nav-btn" maxHeight="Infinity"/>
+        <Button text="Reports"    onAction="#showReports"    styleClass="nav-btn" maxHeight="Infinity"/>
+    </HBox>
+
+    <!-- CONTENT AREA -->
+    <StackPane fx:id="contentArea" styleClass="content-area" VBox.vgrow="ALWAYS">
+        <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+    </StackPane>
+
+</VBox>
